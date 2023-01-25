@@ -6,6 +6,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="no_articles_to_show">No articles to show :(</string>
+    <string name="article_image">Article Image</string>
+    <string name="read">Read</string>
 
     // Drawer Menu
     <string name="menu_all">All</string>
