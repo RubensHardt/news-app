@@ -41,17 +41,7 @@ class ListActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener {
             listViewModel.refresh()
         }
-        listViewModel.articlesListState.observe(this) {
-            with(binding) {
-                swipeRefresh.isRefreshing = it.isLoading
-                emptyTextView.isVisible = it.isEmpty
-                if (it.error?.showError == true) {
-                    it.error.showError = false
-                    Toast.makeText(this@ListActivity, it.error.errorMessage, Toast.LENGTH_SHORT).show()
-                }
-            }
-            adapter.submitList(it.articles)
-        }
+        setupObservers()
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -90,5 +80,19 @@ class ListActivity : AppCompatActivity() {
         drawerToggle.isDrawerIndicatorEnabled = true
         drawerToggle.syncState()
         drawerLayout.addDrawerListener(drawerToggle)
+    }
+
+    fun setupObservers() {
+        listViewModel.articlesListState.observe(this) {
+            with(binding) {
+                swipeRefresh.isRefreshing = it.isLoading
+                emptyTextView.isVisible = it.isEmpty
+                if (it.error?.showError == true) {
+                    it.error.showError = false
+                    Toast.makeText(this@ListActivity, it.error.errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+            adapter.submitList(it.articles)
+        }
     }
 }
