@@ -5,6 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.rubenshardt.newsapp.utils.Constants
 import kotlinx.parcelize.Parcelize
+import java.text.SimpleDateFormat
+import java.util.*
 
 @Entity(tableName = Constants.ARTICLES_TABLE)
 @Parcelize
@@ -21,4 +23,12 @@ data class Article(
     val url: String?,
     var category: String,
     var read: Boolean = false
-) : Parcelable
+) : Parcelable {
+
+    val formattedDate: String
+        get() {
+            val parser = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+            val formatter = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+            return parser.parse(date)?.let { formatter.format(it) }.toString()
+        }
+}
