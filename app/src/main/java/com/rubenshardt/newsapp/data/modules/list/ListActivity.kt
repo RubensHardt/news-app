@@ -1,5 +1,6 @@
 package com.rubenshardt.newsapp.data.modules.list
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Toast
@@ -11,8 +12,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.navigation.NavigationView
 import com.rubenshardt.newsapp.R
+import com.rubenshardt.newsapp.data.modules.article.ArticleActivity
 import com.rubenshardt.newsapp.data.modules.list.ui.ArticlesListAdapter
 import com.rubenshardt.newsapp.databinding.ActivityListBinding
+import com.rubenshardt.newsapp.models.Article
+import com.rubenshardt.newsapp.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -36,7 +40,7 @@ class ListActivity : AppCompatActivity() {
         setupToolbar()
         setupNavView()
 
-        adapter = ArticlesListAdapter {}
+        adapter = ArticlesListAdapter(::showArticleDetails)
         binding.recyclerView.adapter = adapter
         binding.swipeRefresh.setOnRefreshListener {
             listViewModel.refresh()
@@ -94,5 +98,12 @@ class ListActivity : AppCompatActivity() {
             }
             adapter.submitList(it.articles)
         }
+    }
+
+    private fun showArticleDetails(article: Article) {
+        val intent = Intent(this, ArticleActivity::class.java).apply {
+            putExtra(Constants.ARTICLE, article)
+        }
+        startActivity(intent)
     }
 }
