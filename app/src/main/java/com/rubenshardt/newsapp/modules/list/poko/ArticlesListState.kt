@@ -1,4 +1,4 @@
-package com.rubenshardt.newsapp.data.modules.list.poko
+package com.rubenshardt.newsapp.modules.list.poko
 
 import com.rubenshardt.newsapp.models.Article
 

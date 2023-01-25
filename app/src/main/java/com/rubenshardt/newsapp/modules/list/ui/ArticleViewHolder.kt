@@ -1,4 +1,4 @@
-package com.rubenshardt.newsapp.data.modules.list.ui
+package com.rubenshardt.newsapp.modules.list.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

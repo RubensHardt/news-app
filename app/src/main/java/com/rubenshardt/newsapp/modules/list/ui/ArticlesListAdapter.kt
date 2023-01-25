@@ -1,11 +1,13 @@
-package com.rubenshardt.newsapp.data.modules.list.ui
+package com.rubenshardt.newsapp.modules.list.ui
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.rubenshardt.newsapp.models.Article
 
-class ArticlesListAdapter(private val onClick: (Article) -> Unit) : ListAdapter<Article, ArticleViewHolder>(ArticleDiffCallback) {
+class ArticlesListAdapter(private val onClick: (Article) -> Unit) : ListAdapter<Article, ArticleViewHolder>(
+    ArticleDiffCallback
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         return ArticleViewHolder.from(parent, onClick)

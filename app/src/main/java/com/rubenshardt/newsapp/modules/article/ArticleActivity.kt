@@ -1,4 +1,4 @@
-package com.rubenshardt.newsapp.data.modules.article
+package com.rubenshardt.newsapp.modules.article
 
 import android.os.Bundle
 import android.view.Menu

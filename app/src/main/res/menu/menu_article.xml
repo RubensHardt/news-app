@@ -2,7 +2,7 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".data.modules.article.ArticleActivity">
+    tools:context=".modules.article.ArticleActivity">
     <item
         android:id="@+id/markAsRead"
         android:icon="@drawable/ic_read"

@@ -1,4 +1,4 @@
-package com.rubenshardt.newsapp.data.modules.list
+package com.rubenshardt.newsapp.modules.list
 
 import android.content.Intent
 import android.content.res.Configuration
@@ -12,8 +12,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.navigation.NavigationView
 import com.rubenshardt.newsapp.R
-import com.rubenshardt.newsapp.data.modules.article.ArticleActivity
-import com.rubenshardt.newsapp.data.modules.list.ui.ArticlesListAdapter
+import com.rubenshardt.newsapp.modules.article.ArticleActivity
+import com.rubenshardt.newsapp.modules.list.ui.ArticlesListAdapter
 import com.rubenshardt.newsapp.databinding.ActivityListBinding
 import com.rubenshardt.newsapp.models.Article
 import com.rubenshardt.newsapp.utils.Constants

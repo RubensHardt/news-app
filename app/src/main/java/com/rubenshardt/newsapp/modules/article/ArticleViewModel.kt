@@ -1,4 +1,4 @@
-package com.rubenshardt.newsapp.data.modules.article
+package com.rubenshardt.newsapp.modules.article
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

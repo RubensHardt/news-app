@@ -1,10 +1,10 @@
-package com.rubenshardt.newsapp.data.modules.list
+package com.rubenshardt.newsapp.modules.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.rubenshardt.newsapp.data.modules.list.poko.ArticlesError
-import com.rubenshardt.newsapp.data.modules.list.poko.ArticlesListState
+import com.rubenshardt.newsapp.modules.list.poko.ArticlesError
+import com.rubenshardt.newsapp.modules.list.poko.ArticlesListState
 import com.rubenshardt.newsapp.data.repositories.ArticlesRepository
 import com.rubenshardt.newsapp.data.repositories.NetworkResult
 import com.rubenshardt.newsapp.models.Article
